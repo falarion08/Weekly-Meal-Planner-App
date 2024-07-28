@@ -31,18 +31,18 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="relative min-h-screen bg-gray-100"> {/* Ensure the background color and full height */}
-      <div className="absolute top-0 right-0 p-4"> {/* Positioning the buttons */}
+    <div className="relative min-h-screen bg-gray-100"> 
+      <div className="absolute top-0 right-0 p-4"> 
         <button onClick={handleLoginClick} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2">Login</button>
         <button onClick={handleRegisterClick} className="bg-green-500 text-white font-bold py-2 px-4 rounded">Register</button>
       </div>
-      <div className="flex flex-col items-center justify-center min-h-screen"> {/* Centering container */}
-        <h1 className="text-blue-500 text-6xl mb-8">Health and Nutrition Support Portal</h1> {/* Bigger text */}
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <h1 className="text-blue-500 text-6xl mb-8">Health and Nutrition Support Portal</h1>
         <p> Portals Purpose</p>
 
-        <hr className="w-full border-t border-gray-700 mb-8" /> {/* Horizontal line */}
+        <hr className="w-full border-t border-gray-700 mb-8" />
 
-        <div className="flex space-x-4"> {/* Container for buttons with horizontal spacing */}
+        <div className="flex space-x-4"> 
           <button onClick={handleButton1Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Basic Nutrition</button>
           <button onClick={handleButton2Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Budget Recepies</button>
           <button onClick={handleButton3Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Local Assitance and Resources</button>
