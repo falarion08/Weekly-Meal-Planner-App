@@ -15,19 +15,19 @@ const navigate = useNavigate();
   };
 
   const handleButton1Click = () => {
-    // Handle button 1 click
+    navigate('/nutrition')
   };
 
   const handleButton2Click = () => {
-    // Handle button 2 click
+    navigate('/recepies')
   };
 
   const handleButton3Click = () => {
-    // Handle button 3 click
+    navigate('/assistance')
   };
 
   const handleButton4Click = () => {
-    // Handle button 4 click
+    navigate('/support')
   };
 
   return (
@@ -37,8 +37,13 @@ const navigate = useNavigate();
         <button onClick={handleRegisterClick} className="bg-green-500 text-white font-bold py-2 px-4 rounded">Register</button>
       </div>
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-blue-500 text-6xl mb-8">Health and Nutrition Support Portal</h1>
-        <p> Portals Purpose</p>
+        <h1 className="text-blue-500 text-6xl mb-8 font-bold">Health and Nutrition Support Portal</h1>
+        <p className="text-orange-500 text-center mb-8 font-bold">
+          Our goal is to help our users connect to local health services
+          <br />
+          and offer resources for maintaining good health despite financial constraints.
+        </p>
+
 
         <hr className="w-full border-t border-gray-700 mb-8" />
 
