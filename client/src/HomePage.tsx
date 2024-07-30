@@ -30,6 +30,10 @@ const navigate = useNavigate();
     navigate('/support')
   };
 
+  const handlePlannerClick = () => {
+    navigate('/planner')
+  };
+
   return (
     <div className="relative min-h-screen bg-gray-100"> 
       <div className="absolute top-0 right-0 p-4"> 
@@ -48,6 +52,7 @@ const navigate = useNavigate();
         <hr className="w-full border-t border-gray-700 mb-8" />
 
         <div className="flex space-x-4"> 
+          <button onClick ={handlePlannerClick} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Meal Planner</button>
           <button onClick={handleButton1Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Basic Nutrition</button>
           <button onClick={handleButton2Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Budget Recepies</button>
           <button onClick={handleButton3Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Local Assitance and Resources</button>

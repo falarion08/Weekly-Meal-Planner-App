@@ -7,6 +7,7 @@ import LocalAssistance from './LocalAssistance';
 import BasicNutrition from './BasicNutrition';
 import BudgetRecepies from './BudgetRecepies';
 import SupportContact from './SupportContact';
+import MealPlanner from './MealPlanner';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path = "/assistance" element={<LocalAssistance/>}/>
           <Route path = "/nutrition" element={<BasicNutrition/>} />
           <Route path = "/recepies" element={<BudgetRecepies/>} />
-          <Route path = "support" element= {<SupportContact/>} />
+          <Route path = "/support" element= {<SupportContact/>} />
+          <Route path = "/planner" element = {<MealPlanner/>}/>
         </Routes>
       </Router>
     </div>
