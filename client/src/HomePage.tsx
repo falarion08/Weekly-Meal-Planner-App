@@ -34,6 +34,10 @@ const navigate = useNavigate();
     navigate('/planner')
   };
 
+  const handleShoppingList = () => {
+    navigate('/shoppingList')
+  };
+
   return (
     <div className="relative min-h-screen bg-gray-100"> 
       <div className="absolute top-0 right-0 p-4"> 
@@ -57,6 +61,7 @@ const navigate = useNavigate();
           <button onClick={handleButton2Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Budget Recepies</button>
           <button onClick={handleButton3Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Local Assitance and Resources</button>
           <button onClick={handleButton4Click} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Support and Contact</button>
+          <button onClick={handleShoppingList} className="bg-cyan-500 text-white font-bold py-2 px-4 rounded">Shopping List</button>
         </div>
       </div>
     </div>
