@@ -6,11 +6,24 @@ interface Ingredient {
 }
 
 const CreateMealPlan: React.FC = () => {
+
+
+    {/* Ingredients list */}
     const [ingredients, setIngredients] = useState<Ingredient[]>([{ name: '', cost: '' }]);
 
+
+    {/* Handle  adding ingredients when button is clicked*/}
     const addIngredient = () => {
         setIngredients([...ingredients, { name: '', cost: '' }]);
     };
+    
+    {/*  Handles Removing ingredients */}
+
+    const removeIngredient = (index: number) => {
+        setIngredients(ingredients.filter((_, i) => i !== index));
+    };
+
+    {/*  Handles ingredient input change in each ingredient*/}
 
     const handleIngredientChange = (index: number, event: React.ChangeEvent<HTMLInputElement>) => {
         const newIngredients = ingredients.map((ingredient, i) => {
@@ -27,6 +40,7 @@ const CreateMealPlan: React.FC = () => {
             <div className="modal">
                 <div className="modal-content p-6 bg-white rounded-lg shadow-md">
                     <h2 className="text-2xl font-bold mb-4">Create Meal Plan</h2>
+
                     <div className="mb-4">
                         <label className="block text-gray-700 mb-2">
                             Day of the Week:
@@ -41,6 +55,7 @@ const CreateMealPlan: React.FC = () => {
                             </select>
                         </label>
                     </div>
+
                     <div className="mb-4">
                         <label className="block text-gray-700 mb-2">
                             Time of Day:
@@ -51,8 +66,19 @@ const CreateMealPlan: React.FC = () => {
                             </select>
                         </label>
                     </div>
+
                     {ingredients.map((ingredient, index) => (
-                        <div key={index} className="mb-4 p-4 border rounded-lg">
+                        <div key={index} className="mb-4 p-4 border rounded-lg relative">
+
+                            <button
+                                type="button"
+                                onClick={() => removeIngredient(index)}
+                                className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+                            >
+                                &times; {/* This is 'x' on the top right */}
+                            </button>
+
+
                             <div className="mb-2">
                                 <label className="block text-gray-700 mb-1">
                                     Ingredient:
@@ -65,6 +91,8 @@ const CreateMealPlan: React.FC = () => {
                                     />
                                 </label>
                             </div>
+
+
                             <div>
                                 <label className="block text-gray-700 mb-1">
                                     Cost:
@@ -79,6 +107,7 @@ const CreateMealPlan: React.FC = () => {
                             </div>
                         </div>
                     ))}
+
                     <button
                         type="button"
                         onClick={addIngredient}
@@ -86,6 +115,7 @@ const CreateMealPlan: React.FC = () => {
                     >
                         Add Ingredient
                     </button>
+
                     <hr className="my-4" />
                     <button
                         type="button"
@@ -93,6 +123,7 @@ const CreateMealPlan: React.FC = () => {
                     >
                         Add Meal Plan
                     </button>
+
                 </div>
             </div>
         </>

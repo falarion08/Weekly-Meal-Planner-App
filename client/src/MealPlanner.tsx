@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import 'flowbite/dist/flowbite.css';
 import WeekCards from './WeekCards';
 import CostOfWeek from './CostOfWeek';
