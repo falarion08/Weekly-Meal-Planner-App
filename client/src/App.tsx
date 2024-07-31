@@ -8,6 +8,7 @@ import BasicNutrition from './BasicNutrition';
 import BudgetRecepies from './BudgetRecepies';
 import SupportContact from './SupportContact';
 import MealPlanner from './MealPlanner';
+import ShoppingList from './ShoppingList';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path = "/recepies" element={<BudgetRecepies/>} />
           <Route path = "/support" element= {<SupportContact/>} />
           <Route path = "/planner" element = {<MealPlanner/>}/>
+          <Route path = "/shoppingList" element ={<ShoppingList/>}/>
         </Routes>
       </Router>
     </div>
