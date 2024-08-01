@@ -13,20 +13,21 @@ export default {
       colors: {
         'gradient-green': '#00FF00', // Customize green color as needed
       },
-
       keyframes: {
         flyInFromRight: {
           '0%': { transform: 'translateX(100%)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        flyInFromLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       animation: {
         flyInFromRight: 'flyInFromRight 1.3s ease-out',
+        flyInFromLeft: 'flyInFromLeft 1.3s ease-out',
       },
-
-      
     },
-  
   },
   plugins: [
     require('flowbite/plugin')
