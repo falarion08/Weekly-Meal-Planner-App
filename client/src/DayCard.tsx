@@ -18,10 +18,19 @@ interface DayCardProps {
   mealPlans: MealPlan[];
 }
 
+
+
 const DayCard: React.FC<DayCardProps> = ({ day, mealPlans }) => {
+
+  const fetchTotalCost = () => {
+    
+  }
+
+  const totatDayCost = 29;
+
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-yellow-200 p-4 mb-4">
-      <div className="font-bold text-xl mb-2">{day}</div>
+      <div className="font-bold text-xl mb-2">{day} | Cost: {totatDayCost}</div>
       <div className="text-gray-700 text-base">
         {mealPlans.map((mealPlan, index) => (
 
