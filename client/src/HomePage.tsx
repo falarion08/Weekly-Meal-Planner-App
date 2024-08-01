@@ -50,11 +50,11 @@ const navigate = useNavigate();
           <button onClick={handleRegisterClick} className="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600">Register</button>
         </div>
         <div className="flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-huge text-green-500 font-bold mb-8 mt-10 animate-flyInFromRight">Health and Nutrition Support Portal</h1>
+          <h1 className="text-huge text-green-500 font-bold mb-8 mt-10 animate-flyInFromRight">Meal Planner App</h1>
           <p className="text-gray-300 text-center mb-8 font-bold">
-            Our goal is to help our users connect to local health services
+            Our goal is to help our users track their meal plans
             <br />
-            and offer resources for maintaining good health despite financial constraints.
+            and track their costs according to their budget
           </p>
 
 

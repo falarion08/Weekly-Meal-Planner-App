@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import WeekCards from './WeekCards';
 
 interface Ingredient {
     name: string;
