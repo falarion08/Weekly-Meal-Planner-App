@@ -9,6 +9,7 @@ import BudgetRecepies from './BudgetRecepies';
 import SupportContact from './SupportContact';
 import MealPlanner from './MealPlanner';
 import ShoppingList from './ShoppingList';
+import NotesTips from './NotesTips';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path = "/support" element= {<SupportContact/>} />
           <Route path = "/planner" element = {<MealPlanner/>}/>
           <Route path = "/shoppingList" element ={<ShoppingList/>}/>
+          <Route path = "/notesTips" element={<NotesTips/>}/>
         </Routes>
       </Router>
     </div>
