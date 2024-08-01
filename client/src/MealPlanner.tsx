@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'flowbite/dist/flowbite.css';
 import WeekCards from './WeekCards';
 import CostOfWeek from './CostOfWeek';
@@ -7,6 +8,7 @@ import CreateMealPlan from './CreateMealPlan';
 
 function MealPlanner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const budget = "$500";
   const totalCost = "$300";
@@ -15,9 +17,18 @@ function MealPlanner() {
     setIsModalOpen(!isModalOpen);
   };
 
+  const goToHome = () => {
+    navigate('/');
+  };
+
   return (
     <div className="min-h-screen p-4 flex flex-col items-center relative">
       <h1 className="text-3xl font-bold mb-4">Weekly Meal Planner</h1>
+      <div className="absolute top-4 right-4">
+        <Button className="bg-yellow-200 text-black" onClick={goToHome}>
+          Home
+        </Button>
+      </div>
       <div className="w-full flex flex-col items-center">
         
         <CostOfWeek budget={budget} totalCost={totalCost} />
