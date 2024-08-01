@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WeekCards from './WeekCards';
 
 interface Ingredient {
     name: string;
@@ -6,24 +7,18 @@ interface Ingredient {
 }
 
 const CreateMealPlan: React.FC = () => {
-
-
-    {/* Ingredients list */}
     const [ingredients, setIngredients] = useState<Ingredient[]>([{ name: '', cost: '' }]);
+    const [selectedDay, setSelectedDay] = useState('monday');
+    const [selectedTime, setSelectedTime] = useState('breakfast');
+    const [mealPlan, setMealPlan] = useState<{ ingredients: Ingredient[], day: string, time: string } | null>(null); {/* Meal Plan that was just created is added to this*/}
 
-
-    {/* Handle  adding ingredients when button is clicked*/}
     const addIngredient = () => {
         setIngredients([...ingredients, { name: '', cost: '' }]);
     };
-    
-    {/*  Handles Removing ingredients */}
 
     const removeIngredient = (index: number) => {
         setIngredients(ingredients.filter((_, i) => i !== index));
     };
-
-    {/*  Handles ingredient input change in each ingredient*/}
 
     const handleIngredientChange = (index: number, event: React.ChangeEvent<HTMLInputElement>) => {
         const newIngredients = ingredients.map((ingredient, i) => {
@@ -35,6 +30,18 @@ const CreateMealPlan: React.FC = () => {
         setIngredients(newIngredients);
     };
 
+    const handleDayChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedDay(event.target.value);
+    };
+
+    const handleTimeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedTime(event.target.value);
+    };
+
+    const addMealPlan = () => {
+        setMealPlan({ ingredients, day: selectedDay, time: selectedTime });
+    };
+
     return (
         <>
             <div className="modal">
@@ -44,7 +51,12 @@ const CreateMealPlan: React.FC = () => {
                     <div className="mb-4">
                         <label className="block text-gray-700 mb-2">
                             Day of the Week:
-                            <select name="day" className="w-full mt-1 p-2 border rounded-md">
+                            <select
+                                name="day"
+                                value={selectedDay}
+                                onChange={handleDayChange}
+                                className="w-full mt-1 p-2 border rounded-md"
+                            >
                                 <option value="monday">Monday</option>
                                 <option value="tuesday">Tuesday</option>
                                 <option value="wednesday">Wednesday</option>
@@ -59,7 +71,12 @@ const CreateMealPlan: React.FC = () => {
                     <div className="mb-4">
                         <label className="block text-gray-700 mb-2">
                             Time of Day:
-                            <select name="time" className="w-full mt-1 p-2 border rounded-md">
+                            <select
+                                name="time"
+                                value={selectedTime}
+                                onChange={handleTimeChange}
+                                className="w-full mt-1 p-2 border rounded-md"
+                            >
                                 <option value="breakfast">Breakfast</option>
                                 <option value="lunch">Lunch</option>
                                 <option value="dinner">Dinner</option>
@@ -69,15 +86,13 @@ const CreateMealPlan: React.FC = () => {
 
                     {ingredients.map((ingredient, index) => (
                         <div key={index} className="mb-4 p-4 border rounded-lg relative">
-
                             <button
                                 type="button"
                                 onClick={() => removeIngredient(index)}
                                 className="absolute top-2 right-2 text-red-500 hover:text-red-700"
                             >
-                                &times; {/* This is 'x' on the top right */}
+                                &times;
                             </button>
-
 
                             <div className="mb-2">
                                 <label className="block text-gray-700 mb-1">
@@ -91,7 +106,6 @@ const CreateMealPlan: React.FC = () => {
                                     />
                                 </label>
                             </div>
-
 
                             <div>
                                 <label className="block text-gray-700 mb-1">
@@ -120,10 +134,10 @@ const CreateMealPlan: React.FC = () => {
                     <button
                         type="button"
                         className="w-full p-2 bg-yellow-200 text-black rounded-md hover:bg-green-600"
+                        onClick={addMealPlan}
                     >
                         Add Meal Plan
                     </button>
-
                 </div>
             </div>
         </>

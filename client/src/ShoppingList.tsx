@@ -16,13 +16,13 @@ export default function ShoppingList() {
                 <div className="flex justify-center mb-4 space-x-2">
                     <button 
                         onClick={handleClick} 
-                        className="bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-md"
+                        className="bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-md hover:bg-blue-600"
                     >
                     Home
                     </button>
                     
                     <button 
-                        className="bg-green-500 text-white font-bold py-2 px-4 rounded shadow-md"
+                        className="bg-green-500 text-white font-bold py-2 px-4 rounded shadow-md hover:bg-green-600"
                     >
                     Generate List
                     </button>
