@@ -12,7 +12,7 @@ function BasicNutrition() {
       <div className="absolute top-4 right-4 animate-flyInFromRight">
         <button 
           onClick={handleClick} 
-          className="bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-md"
+          className="bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-md hover:scale-105 hover:z-10 transition-transform duration-300 ease-in-out"
         >
           Home
         </button>
