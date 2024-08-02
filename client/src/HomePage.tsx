@@ -43,15 +43,17 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="m-0 p-0 relative min-h-screen pt-5 pb-5 mx-auto px-4 text-center text-gray-800 font-sans " style={{ backgroundImage: "url('src/images/img_1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}> 
-    <div className='container mx-auto px-4 bg-gray-100 min-h-screen p-5'>
-      <div className="absolute top-5 right-14 mt-6 mr-16"> 
+    <div className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+    style={{ backgroundImage: "url('/src/images/img_1.png')" }}
+    > 
+    <div className='bg-white bg-opacity-85 p-8 rounded-lg shadow-lg w-full max-w-6xl'>
+      <div className="flex justify-end space-x-4 mb-8"> 
           <button onClick={handleLoginClick} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mr-2 hover:bg-blue-600">Login</button>
           <button onClick={handleRegisterClick} className="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600">Register</button>
         </div>
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-huge text-green-500 font-bold mb-8 mt-10 animate-flyInFromRight">Meal Planner App</h1>
-          <p className="text-gray-300 text-center mb-8 font-bold">
+        <div className="text-center mb-8">
+          <h1 className="text-7xl text-green-600 font-bold mb-4 animate-flyInFromRight">Meal Planner App</h1>
+          <p className="text-gray-700">
             Our goal is to help our users track their meal plans
             <br />
             and track their costs according to their budget
