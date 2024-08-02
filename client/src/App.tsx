@@ -10,6 +10,7 @@ import SupportContact from './SupportContact';
 import MealPlanner from './MealPlanner';
 import ShoppingList from './ShoppingList';
 import NotesTips from './NotesTips';
+import LeftOvers from './LeftOvers';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path = "/planner" element = {<MealPlanner/>}/>
           <Route path = "/shoppingList" element ={<ShoppingList/>}/>
           <Route path = "/notesTips" element={<NotesTips/>}/>
+          <Route path = "/leftOvers" element={<LeftOvers/>}/>
         </Routes>
       </Router>
     </div>
