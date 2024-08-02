@@ -9,7 +9,7 @@ const CreateMealPlan: React.FC = () => {
     const [ingredients, setIngredients] = useState<Ingredient[]>([{ name: '', cost: '' }]);
     const [selectedDay, setSelectedDay] = useState('monday');
     const [selectedTime, setSelectedTime] = useState('breakfast');
-    const [mealPlan, setMealPlan] = useState<{ ingredients: Ingredient[], day: string, time: string } | null>(null); {/* Meal Plan that was just created is added to this*/}
+    const [mealPlan, setMealPlan] = useState<{ ingredients: Ingredient[], day: string, time: string } | null>(null);
 
     const addIngredient = () => {
         setIngredients([...ingredients, { name: '', cost: '' }]);
@@ -44,7 +44,7 @@ const CreateMealPlan: React.FC = () => {
     return (
         <>
             <div className="modal">
-                <div className="modal-content p-6 bg-white rounded-lg shadow-md">
+                <div className="modal-content p-6 bg-white rounded-lg shadow-md max-h-[80vh] overflow-y-auto">
                     <h2 className="text-2xl font-bold mb-4">Create Meal Plan</h2>
 
                     <div className="mb-4">
